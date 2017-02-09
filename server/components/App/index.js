@@ -187,6 +187,10 @@ class App {
   static launch(){
     return require(__dirname+'/servers');
   }
+
+  static launch_local(){
+    return require(__dirname+'/servers_local');
+  }
 }
 
 module.exports = App;

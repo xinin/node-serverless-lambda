@@ -3,4 +3,8 @@
 let MyApp = require(__dirname + '/server/components/App');
 let config = MyApp.Config();
 
-module.exports = MyApp.launch();
+if(config.env === 'dev'){
+    module.exports = MyApp.launch_local();
+} else {
+    module.exports = MyApp.launch();
+}
