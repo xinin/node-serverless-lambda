@@ -1,10 +1,10 @@
 'use strict';
 
 let MyApp = require(__dirname + '/server/components/App');
-let config = MyApp.Config();
+// let config = MyApp.Config();
 
-if(config.env === 'dev'){
-    module.exports = MyApp.launch_local();
-} else {
+if(process.env.NODE_ENV === 'lambda'){
     module.exports = MyApp.launch();
+} else {
+    module.exports = MyApp.launch_local();
 }
