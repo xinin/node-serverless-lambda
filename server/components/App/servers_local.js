@@ -7,6 +7,8 @@ let methodOverride = require('method-override');
 let cookieParser = require('cookie-parser');
 let helmet = require('helmet');
 let App = require(__dirname+'/index');
+let cors = require('cors');
+
 let Utils = App.Utils();
 let config = App.Config();
 let setup = require(__dirname+'/setup');  //CUIDADO CON ESTE
@@ -27,6 +29,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(methodOverride());
 app.use(cookieParser());
+app.use(cors());
 // Utils.setMorgan(app);
 // Utils.setMiddleware(app);
 
